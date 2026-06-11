@@ -4,7 +4,7 @@ from unittest import mock
 
 
 @mock.patch("app.main.datetime.date")
-def test_outdated_products(mock_date) -> None:
+def test_outdated_products(mock_date: int) -> None:
     real_date = datetime.date
     mock_date.today.return_value = real_date(2026, 6, 11)
     mock_date.side_effect = lambda *args, **kwargs: real_date(*args, **kwargs)
