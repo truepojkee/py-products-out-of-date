@@ -3,9 +3,9 @@ import datetime
 from unittest import mock
 
 
-@mock.patch("app.main.datetime.date.today")
+@mock.patch("app.main.datetime.date")
 def test_outdated_products(mock_date_today: int) -> None:
-    mock_date_today.return_value = datetime.date(2026, 6, 11)
+    mock_date_today.today = datetime.date(2026, 6, 11)
     products = [
         {
             "name": "salmon",
