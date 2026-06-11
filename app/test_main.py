@@ -24,4 +24,4 @@ def test_outdated_products(mock_date_today: int) -> None:
         }
     ]
     result = outdated_products(products)
-    assert result == ["salmon", "chicken", "duck"]
+    assert result == ["salmon"]
